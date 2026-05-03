@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <script type="text/javascript" src="./scripts/hello.js"></script>
+    <script type="text/javascript" src="./scripts/helloTS.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <meta
+      name="description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <meta name="og:title" content="Rino.js" />
+    <meta
+      name="og:description"
+      content="Fast learning, preprocessing, intuitive web framework. Rino.js"
+    />
+    <!-- 
+    <meta name="og:site_name" content="Site Name" />
+    <meta name="og:url" content="https://sitename/" />
+    <meta name="og:image" content=""/>
+    -->
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rino.js</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://github.com/rinojs/rinojs" target="_blank">Rino</a>
+    </header>
+    <main>
+      <img id="mainImg" src="./rino256.png" />
+      <h1>Fast learning, preprocessing, intuitive web framework</h1>
+      <a href="https://rinojs.org/" target="_blank">Rino Website!</a>
+      <a href="https://github.com/rinojs/rinojs" target="_blank">Github</a>
+      <component
+        rino-path="button"
+        rino-tag="button"
+        type="button"
+        onclick="window.api.someFunction()"
+      />
+      <component
+        rino-path="button"
+        rino-tag="button"
+        type="button"
+        onclick="hello.hello()"
+      />
+      <component
+        rino-path="button"
+        rino-tag="button"
+        type="button"
+        onclick="helloTS.hello()"
+      />
+      <script rino-type="md" type="text/markdown">
+        ## Hello world!
+
+        This is written in Markdown!
+
+        - This is written in Markdown!
+      </script>
+      <script rino-type="ts" type="text/typescript">
+        // This is for templating html content
+        let world: string = "Hello world! from typescript!";
+        console.log(world);
+      </script>
+      <script rino-type="js" type="text/javascript">
+        // This is for templating html content
+        console.log("Hello world! from javascript!");
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

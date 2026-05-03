@@ -1,0 +1,25 @@
+body {
+  margin: 0px;
+}
+
+main {
+  margin: 5% auto auto auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+img {
+  margin: 0px auto;
+  max-width: 256px;
+  width: 100%;
+}
+
+header {
+  padding: 40px;
+  height: 60px;
+}
+
+header a {
+  height: 60px;
+  margin: auto 0px;
+}

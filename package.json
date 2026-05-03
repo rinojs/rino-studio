@@ -1,0 +1,81 @@
+{
+  "name": "rino-test",
+  "version": "0.0.1",
+  "description": "App",
+  "private": true,
+  "main": "./main/app.js",
+  "type": "module",
+  "scripts": {
+    "rino:dev": "node ./rino/dev.js",
+    "rino:generate": "node ./rino/generate.js",
+    "main:dev": "start electron .",
+    "dev": "node devHelper.js",
+    "dist": "npm run rino:generate && electron-builder",
+    "dist:pack": "npm run rino:generate && electron-builder --dir",
+    "dist:win": "npm run rino:generate && electron-builder --win",
+    "dist:linux": "npm run rino:generate && electron-builder --linux",
+    "dist:mac": "npm run rino:generate && electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.yourcompany.yourapp",
+    "productName": "YourApp",
+    "compression": "normal",
+    "asar": true,
+    "files": [
+      "!dist",
+      "!rino",
+      "!devHelper.js"
+    ],
+    "directories": {
+      "buildResources": "./assets/",
+      "output": "./dist/"
+    },
+    "win": {
+      "target": [
+        "zip",
+        "portable"
+      ],
+      "icon": "./assets/icons/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "${productName}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}.${ext}",
+      "useZip": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "snap"
+      ],
+      "icon": "./assets/icons/icon.png",
+      "category": "Utility",
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "deb": {
+      "maintainer": "you@example.com",
+      "synopsis": "A simple cross-platform desktop app",
+      "description": "${productName} is a cross-platform application built with love."
+    }
+  },
+  "author": "YourCompany",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "electron": "^41.5.0",
+    "electron-builder": "^26.8.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "rinojs": "^2.22.0"
+  }
+}
